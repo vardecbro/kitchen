@@ -1,0 +1,36 @@
+.header
+  display: block
+  // padding: 1rem 0
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 100 
+  &__over
+    position: fixed
+    box-shadow: 0 4px 12px rgba(0.1,0.1,0.1,0.3)
+    background-color: $col_bg_d
+
+.logo
+  &__link
+    display: none
+    line-height: 0
+    +rmin(992)
+      display: inline-block
+  &__img
+    margin: 10px 0 10px 64px
+    height: 60px
+.call
+  &__link
+    margin: 0
+    line-height: 0 
+    display: none
+    +rmin(992)
+      display: inline-block
+      float: right
+  &__img
+    margin: 0
+    height: 50px
+    margin-top: 15px
+    margin-bottom: 15px
+    margin-right: 64px

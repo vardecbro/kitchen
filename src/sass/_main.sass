@@ -1,0 +1,622 @@
+/* глобальные параметры */
+*
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+  font-family: 'Open Sans', Arial, sans-serif
+
+.visually-hidden 
+  position: absolute
+  clip: rect(0 0 0 0)
+  width: 1px
+  height: 1px
+  margin: -1px
+
+.clearfix:after
+  display: block
+  content: ""
+  clear: both 
+/* конец глобальных параметров */
+
+.wrapper
+  max-width: 1920px
+  margin: 0 auto
+  padding: 0
+  &__navbar
+    line-height: 0 
+
+.wrap
+  &__content
+    max-width: 1366px
+    margin: 0 auto
+  &__map
+    // display: inline-block
+    // max-width: 55% 
+    // padding-bottom: 2em
+  &__contacts
+    max-width: 96% 
+    margin: 0 auto
+    min-height: 75vh
+    &-info
+      display: inline-block
+      max-width: 40%
+      +r(800)
+        display: block
+        max-width: 100%
+
+.wrappr
+  display: inline-block
+  width: 55%
+  margin: 0
+  padding: 0
+  +r(800)
+    width: 100%
+
+.flex__container
+  padding-top: 80px
+  +r(992)
+    padding-top: 54px 
+  height: 100% 
+  display: flex
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-flex-direction: row
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-justify-content: center
+  justify-content: center
+  height: 100%
+  -webkit-align-items: center
+  align-items: center
+/* конец глобальных параметров */
+
+.section
+  width: 100%
+  height: 100vh
+  margin: 0
+  padding: 0
+  &__hero
+    background: linear-gradient($col_shero_grst, $col_shero_grend)
+  &__slider
+    background: linear-gradient($col_shero_grend 0%, rgba($col_shero_grend, 0.7) 35%, rgba($col_shero_grend, 0.7) 65%, $col_sslider_grend 100%), url('../img/section_bg/slider.jpg') center
+    background-size: cover
+  &__steps
+    // height: 100% 
+    min-height: 100vh 
+    background: linear-gradient($col_sslider_grend 0%, rgba($col_ssteps_grend, 0.7) 35%, rgba($col_ssteps_grend, 0.7) 65%, $col_ssteps_grend 100%), url('../img/section_bg/steps.jpg') center
+    background-size: cover
+    +rmin(1025)
+      height: 100vh 
+  &__contacts
+    background: linear-gradient($col_ssteps_grend, $col_shero_grst)
+    padding-top: 2em
+    height: initial
+    
+/* section hero */
+.hero
+  &__kitchen
+    margin: 0 auto
+    min-width: 40% 
+    max-width: 45%
+    // height: 100% 
+    // +r(1023)
+    //   min-width: 60%
+    //   max-width: 90% 
+    +r(567)
+      min-width: 80%
+      max-width: 90%  
+  &__description
+    // max-width: 50%
+    margin: 0 auto
+    +r(567)
+      min-width: 90%
+  &__title
+    width: 100%
+    text-align: right
+    font-size: 0.9em
+    font-weight: 300
+    +col_l
+    +r(567)
+      width: 95% 
+      font-size: 2em 
+  &__text
+    width: 100%
+    text-align: right
+    margin-top: 1.5em
+    margin-bottom: 0.7em 
+    font-size: 0.55em 
+    font-weight: 300 
+    +col_accent
+    +r(567)
+      width: 95% 
+      font-size: 1em 
+  &__price
+    width: 100%
+    text-align: right
+    font-size: 0.5em 
+    font-weight: 900 
+    +col_accent
+    +r(567)
+      width: 95%
+      font-size: 1.5em 
+  &__upper
+    font-size: 1.5em
+/* end section hero */
+
+/* section slider */
+.shad__bg
+  width: 96%
+  // height: 96% 
+  margin: 0px auto 
+  // background-color: rgba(26, 31, 35, 0.3)
+
+.slider
+  display: flex
+  height: calc(100% - 3.6em)
+  -webkit-align-items: center
+  align-items: center
+  &__title
+    display: table
+    padding: .2em 
+    font-size: 0.6em
+    line-height: 0.7em
+    font-weight: 400 
+    color: $col_bg_d
+    background: $col_accent
+    +r(567)
+      font-size: 1.2em 
+      padding: .25em
+    &_wrap
+      margin: 1em 10%
+      max-width: 55%
+      +r(1024)
+        max-width: 100% 
+  &__field
+    list-style: none
+    width: 80%
+    height: 100% 
+    margin: 0 auto
+    overflow: hidden
+    display: flex
+    -webkit-justify-content: space-between
+    justify-content: space-between
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-flex-direction: row
+    -ms-flex-direction: row
+    flex-direction: row
+    
+  &__item
+    display: inline-block
+    width: 47%
+    height: 100%
+    // background-color: rgba(0, 0, 0, 0.2)
+    // margin: 2%
+    display: none
+    +r(1024)
+      width: 100% 
+
+    
+    &.curry_first, &.curry_second
+      // display: inline-block
+      display: flex
+      -webkit-flex-direction: column
+      -ms-flex-direction: column
+      flex-direction: column
+      // -webkit-justify-content: center
+      // justify-content: center
+      -webkit-align-items: center
+      align-items: center
+      min-width: 47%
+
+    &_img
+      display: block
+      -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3) 
+      box-shadow: 0 0 .5em rgba(0, 0, 0, 0.3) 
+      width: 100%
+      height: 35vh
+      &_wrap
+        width: 100% 
+    &_text
+      width: 100%
+      font-size: 1.4em
+      padding: 0 .2em 
+      +rmin(800)
+        font-size: 1em
+
+    &_title
+      font-size: 0.55em
+      margin-top: .5em
+      margin-bottom: 0.5em
+      +col_accent
+      +r(567)
+        font-size: 1em
+        margin-bottom: 0.3em
+        margin-top: .3em
+    &_description
+      font-size: 0.3em
+      font-weight: 300
+      margin-top: 1em
+      margin-bottom: 1em
+      +col_l
+      +r(1024)
+        font-size: .5em
+        margin-top: 0.5em
+        margin-bottom: 0.5em
+    &_size
+      float: left
+      font-size: .3em
+      font-weight: 300 
+      +col_g
+      +r(1024)
+        font-size: .4em
+    &_price
+      display: inline-block
+      // float: right
+      background-color: $col_accent
+      +col_l
+      font-size: .35em
+      padding: .2em 0.4em
+      -webkit-border-radius: 1.53em 
+      border-radius: 1.4em
+      margin-bottom: .2em
+      +r(1024)
+        font-size: .45em
+
+.revers
+  -webkit-flex-direction: row-reverse
+  -ms-flex-direction: row-reverse
+  flex-direction: row-reverse
+
+.arrow
+  display: block
+  margin: 0 auto 
+  width: 44px
+  height: 36px
+  background: url("../img/arrow.png")
+  &__wrap
+    width: 10% 
+.prev
+  background-position: 0px -1px
+  &:hover
+    background-position: 0px -36px
+.next
+  background-position: 44px -1px
+  &:hover
+    background-position: 44px -36px
+/* end section slider*/
+
+
+/* section steps */
+.steps
+  &__wrap
+    width: 80%
+    font-size: 2.2em
+    +rmin(550)
+      font-size: 2em
+    +rmin(650)
+      font-size: 1.5em
+    +rmin(810)
+      font-size: 1.25em
+    
+    // height: calc(100% - 2em)
+    margin: 0 auto
+    position: relative
+    +rmin(1025)
+      font-size: .75em
+      height: calc(100% - 2em)
+ 
+
+    // background-color: red
+  &__path
+    position: absolute
+    width: calc(100% - .875em)
+    height: 55%
+    margin: 2em 0 0 0
+    // margin-right: 1em 
+    border: .25em dashed $col_accent
+    -webkit-border-radius: 0 2em 2em 0 
+    border-radius: 0 2em 2em 0 
+    border-left: none
+    +r(1024)
+      display: none
+    
+
+.step
+  position: relative
+  max-width: 100%
+  +rmin(1025)
+    position: absolute
+    max-width: 40%
+  &__description
+    width: 100%
+    padding: 0.5em 2.5em
+    +rmin(1025)
+      padding: 0
+      width: 80%
+    &_1
+      -webkit-border-radius: 0 0 0 2em 
+      border-radius: 0 0 0 2em 
+      border-top: none
+      border-right: none
+      border-bottom: none
+      padding-right: 0.5em
+    &_2
+      padding-left: 0.5em
+    &_3
+      padding-right: 0.5em
+    &_4
+      padding-left: 0.5em
+    &_5
+      padding-right: 0.5em
+      
+  &__1
+    display: block
+    +rmin(1025)
+      top: 1.125em
+      left: -0.15em
+  &__2
+    display: block
+    display: block
+    +rmin(1025)
+      top: 1.125em
+      left: 50% 
+  &__3
+    display: block
+    +rmin(1025)
+      max-width: 50% 
+      top: 40%
+      right: 0
+  &__4
+    display: block
+    +rmin(1025)
+      top: calc(.875em + 55%)
+      left: 50%
+  &__5
+    display: block
+    +rmin(1025)
+      top: calc(.875em + 55%)
+      left: -0.15em
+  &__slogan
+    display: block
+    min-width: 100% 
+    font-size: 0.5em
+    +rmin(640)
+      font-size: 0.75em
+    +rmin(800)
+      font-size: 1em
+    +rmin(1025)
+      top: 40%
+      max-width: 50% 
+      left: 0
+
+
+
+  &__icon
+    float: left
+    width: 2em
+    height: 2em
+    -webkit-border-radius: 50%
+    border-radius: 50%
+    background-color: $col_accent
+    &_1
+      float: left
+      background-image: url("../icons/step_1.png")
+      -webkit-background-size: contain 
+      -o-background-size: contain 
+      background-size: contain 
+      +rmin(1025)
+        float: left
+        margin-right: 80%
+        margin-bottom: 0.25em
+    &_2
+      float: right
+      background-image: url("../icons/step_2.png")
+      -webkit-background-size: contain 
+      -o-background-size: contain 
+      background-size: contain 
+      +rmin(1025)
+        float: left
+        margin-right: 80%
+        margin-bottom: 0.25em
+    &_3
+      float: left
+      background-image: url("../icons/step_3.png")
+      -webkit-background-size: contain 
+      -o-background-size: contain 
+      background-size: contain 
+      +rmin(1025)
+        float: right
+        margin-left: 0.5em
+    &_4
+      float: right
+      background-image: url("../icons/step_4.png")
+      -webkit-background-size: contain 
+      -o-background-size: contain 
+      background-size: contain 
+      +rmin(1025)
+        float: left
+        margin-right: 80%
+        margin-bottom: 0.25em
+    &_5
+      float: left
+      background-image: url("../icons/step_5.png")
+      -webkit-background-size: contain 
+      -o-background-size: contain 
+      background-size: contain 
+      +rmin(1025)
+        float: left
+        margin-right: 80%
+        margin-bottom: 0.25em
+
+    &_separator
+      width: 100%
+      height: 2em 
+  &__title
+    font-size: 0.4em
+    font-weight: 800
+    margin-bottom: 0.25em 
+    +col_accent
+  &__text
+    font-size: 0.35em
+    font-weight: 300
+    +col_l
+
+.timeline
+  display: block
+  width: 90%
+  margin: 0 auto
+  height: 2em
+  +rmin(1025)
+    display: none
+  &_lefttop
+    float: left
+    height: 1em
+    width: 2em
+    -webkit-border-radius: 0 0 0 1em
+    border-radius: 0 0 0 1em
+    border: .15em dashed $col_accent
+    border-top: none
+    border-right: none
+  &_plane
+    float: left
+    height: 1em
+    width: calc(100% - 4em)
+    border: .15em dashed $col_accent
+    border-top: none
+    border-right: none
+    border-left: none
+  &_rightbottom
+    float: left
+    height: 1em
+    width: 2em
+    margin-top: .85em
+    -webkit-border-radius: 0 1em 0 0
+    border-radius: 0 1em 0 0
+    border-top: .15em dashed $col_accent
+    border-right: .15em dashed $col_accent 
+    border-bottom: none
+    border-left: none 
+  &_leftbottom
+    float: left
+    height: 1em
+    width: 2em
+    margin-top: .85em
+    -webkit-border-radius: 1em 0 0 0
+    border-radius: 1em 0 0 0
+    border: .15em dashed $col_accent
+    border-bottom: none
+    border-right: none
+  &_righttop
+    float: left
+    height: 1em
+    width: 2em
+    -webkit-border-radius: 0 0 1em 0
+    border-radius: 0  0 1em 0
+    border: .15em dashed $col_accent
+    border-top: none 
+    border-left: none
+/* end section steps*/
+
+
+
+
+
+/* section contacts */
+
+.contacts
+  margin-bottom: .5em 
+  // width: 96%
+  +col_l
+  font-size: .8em
+  font-weight: 300
+  &__pad
+    margin-top: 1.2em
+    // margin-bottom: 2em
+    position: absolute
+    display: inline-block
+    // left: 30%
+    z-index: 500
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .5)
+    // margin-top: 2em
+    // margin-bottom: 2em
+    +r(800)
+      position: relative
+      display: inline-block
+      margin-top: 2em
+      margin-bottom: 2em    
+      left: initial
+      box-shadow: 0 0 0 0
+  &__link
+    color: $col_l
+    text-decoration: none
+    &:hover
+      color: $col_accent
+  +rmin(800)
+    font-size: 0.4em
+/* end section contacts */
+
+
+
+
+/* social set*/
+
+.social
+  &__block
+    // float: right
+    display: block
+    margin-top: 0.5em
+    margin-bottom: 0.5em
+    // margin-left: .7em
+  &__fb
+    display: inline-block
+    width: 36px
+    height: 36px
+    background-image: url(../img/social_set.png)
+    background-repeat: no-repeat
+    -webkit-background-size: 144px 
+    -o-background-size: 144px 
+    background-size: 144px
+    background-position: 0px 0px
+    &:hover
+      background-position: 0px -36px
+  &__inst
+    display: inline-block
+    width: 36px
+    height: 36px
+    background-image: url(../img/social_set.png)
+    background-repeat: no-repeat
+    -webkit-background-size: 144px 
+    -o-background-size: 144px 
+    background-size: 144px
+    background-position: -36px 0px
+    &:hover
+      background-position: -36px -36px
+  &__yt
+    display: inline-block
+    width: 36px
+    height: 36px
+    background-image: url(../img/social_set.png)
+    background-repeat: no-repeat
+    -webkit-background-size: 144px 
+    -o-background-size: 144px 
+    background-size: 144px
+    background-position: -72px 0px
+    &:hover
+      background-position: -72px -36px
+  &__vk
+    display: inline-block
+    width: 36px
+    height: 36px
+    background-image: url(../img/social_set.png)
+    background-repeat: no-repeat
+    -webkit-background-size: 144px 
+    -o-background-size: 144px 
+    background-size: 144px
+    background-position: -108px 0px
+    &:hover
+      background-position: -108px -36px
+/* end sosial set*/

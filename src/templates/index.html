@@ -1,0 +1,195 @@
+---
+title: Кухни Вардек
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+ {% include "partials/_preloader.html" %}
+<main>
+  <div class="wrapper">
+    <section class="section section__hero">
+      <div class="wrap__content flex__container clearfix">
+        <img src="../img/hero__kitchen.png" alt="" class="hero__kitchen" />
+        <div class="hero__description">
+          <h2 class="hero__title">САМОЕ ВКУСНОЕ</h2>
+          <h2 class="hero__title">МЕСТО В ДОМЕ</h2>
+          <p class="hero__text">Удобство и красота доступны каждому</p>
+          <p class="hero__price">ОТ <span class="hero__upper">22.600</span> РУБ</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section__slider" id="sec_slider">
+      <div class="wrapper flex__container clearfix">
+        <div class="shad__bg">
+          <div class="slider__title_wrap">
+            <h2 class="slider__title">ВЫБЕРИ СВОЁ</h2>
+            <h2 class="slider__title">САМОЕ ВКУСНОЕ МЕСТО</h2>
+          </div>
+
+          <div class="slider" id="slider">
+            <div class="arrow__wrap">
+              <div class="arrow prev"></div>
+            </div>            
+
+            <ul class="slider__field" id="sliderField">
+              {% import "data/slider_item.html" as slider_items %}
+                {% for item in slider_items.item %}
+                  <li class="slider__item">
+                    <div class="slider__item_img_wrap">
+                      <div class="slider__item_img" style="background: url('{{item.image}}') no-repeat center; background-size: cover;"></div>
+                      <!-- <img src="{{item.image}}" class="slider__item_img" alt="" /> -->
+                    </div>
+
+                    <div class="slider__item_text">
+                      <h2 class="slider__item_title">КУХНЯ {{item.name | upper}}</h2>
+                      <p class="slider__item_price">{{item.price}}</p>
+                      <p class="slider__item_description">{{item.description}}</p>
+                      <!-- <p class="slider__item_size">{{item.size}}</p> -->
+                      <!-- <p class="slider__item_price">{{item.price}}</p> -->
+                    </div>
+                  </li>
+                {%endfor%}
+
+            </ul>
+
+            <div class="arrow__wrap">
+              <div class="arrow next"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section__steps clearfix">
+      <div class="steps__wrap clearfix">
+        
+        <div class="steps__path"></div>
+
+        <div class="step step__1">
+          <div class="step__icon step__icon_1"></div>
+          <div class="step__description step__description_1">
+            <h2 class="step__title">ВЫЕЗД ДИЗАЙНЕРА</h2>
+            <p class="step__text">
+              Дизайнер от ВАРДЕК приедет к Вам в удобное для Вас время, совместно с ним вы смоделируете кухонный гарнитур вашей мечты.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline_lefttop"></div>
+          <div class="timeline_plane"></div>
+          <div class="timeline_rightbottom"></div>
+        </div>
+
+        <div class="step step__2">
+          <div class="step__icon step__icon_2"></div>
+          <div class="step__description step__description_2">
+            <h2 class="step__title">ВЫБОР МАТЕРИАЛОВ</h2>
+            <p class="step__text">
+              Подберите цветовые решения, материалы, фурнитуру для Вашей будущей кухни, в живую, посмотрев образцы, которые привозит с собой наш выездной дизайнер
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline_leftbottom"></div>
+          <div class="timeline_plane"></div>
+          <div class="timeline_righttop"></div>
+        </div>
+
+
+        <div class="step step__3">
+          <div class="step__icon step__icon_3"></div>
+          <div class="step__description step__description_3">
+            <h2 class="step__title">СОЗДАНИЕ 3D ПРОЕКТА</h2>
+            <p class="step__text">
+              После того, как вы определитесь с материалами, цветами и компоновкой, дизайнер составит 3д проект кухни, рассчитает ее точную стоимость и оформит договор!
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline_lefttop"></div>
+          <div class="timeline_plane"></div>
+          <div class="timeline_rightbottom"></div>
+        </div>
+
+        <div class="step step__slogan">
+          <h2 class="slider__title">СОЗДАЙ СВОЁ</h2>
+          <h2 class="slider__title">САМОЕ ВКУСНОЕ МЕСТО</h2>
+        </div>
+
+        <div class="step__description"></div>
+
+        <div class="step step__4">
+          <div class="step__icon step__icon_4"></div>
+          <div class="step__description step__description_4">
+            <h2 class="step__title">БЫСТРЫЙ СРОК ВЫПОЛНЕНИЯ</h2>
+            <p class="step__text">
+              Наши профессиональные сотрудники будут работать над Вашим заказом в течение 21 дня, чтобы спустя это время в вашем доме появилась кухня Вашей мечты!
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline_leftbottom"></div>
+          <div class="timeline_plane"></div>
+          <div class="timeline_righttop"></div>
+        </div>
+
+        <div class="step step__5">
+          <div class="step__icon step__icon_5"></div>
+          <div class="step__description step__description_5">
+            <h2 class="step__title">СБОРКА ГАРНИТУРЫ</h2>
+            <p class="step__text">
+              Кроме всего прочего, Вардек поможет в сборке гарнитуры, а также даст гарантию на эксплуатационные характеристики.
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </section> 
+
+    <section class="section section__contacts clearfix" id="contacts"> 
+      <div class="shad__bg" >
+        <div class="wrap__contacts">
+          <h2 class="slider__title contacts__pad">КОНТАКТЫ</h2>
+
+
+
+          <div class="wrap__contacts-info">
+            <p class="contacts">
+              Адрес: Санкт-Петербург, Петергофское шоссе 72к4
+            </p>
+            <p class="contacts">
+            <a href="tel:88129990103" class="contacts__link">Телефон: 7(812) 999-01-03</a>
+            </p>      
+            <p class="contacts">
+            <a href="mailto:kitchen@vardek.ru" class="contacts__link">E-mail: kitchen@vardek.ru</a>
+            </p>
+            <div class="social__block">
+              <a href="https://instagram.com/kuhni_spb_krasnoselskii" class="social__inst"></a>
+              <a href="https://vk.com/kuhni_spb_krasnoselskii" class="social__vk"></a>
+            </div>         
+          </div>
+
+          <div class="wrappr">
+            <div class="wrap__map">
+               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af008648b970c18babbb4d17af60e9f4ddbeacd129cec963ade8d1a6624b47ecb&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  
+</main>
+{% endblock %}

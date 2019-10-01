@@ -1,0 +1,104 @@
+.navbar
+  display: block
+  background-color: $col_bg_d
+  font-size: 2rem
+  color: $col_accent
+  margin: 0
+  padding: 0
+  &__list
+    display: none
+    float: right
+    // width: calc(100% - 60px)
+    width: 100%
+    text-align: center
+    margin-bottom: 70px
+    +rmin(992)
+      // display: block
+      display: inline-block
+      width: 70%
+      margin: 0     
+  &__item
+    display: none
+    // margin-left: 30%
+    +rmin(992)
+      display: block
+      float: left
+      margin-left: 5%
+      margin-right: 5% 
+      // margin-top: 1rem
+      // margin-bottom: 1rem
+  &__link
+    display: inline-block
+    text-decoration: none
+    line-height: 5rem
+    font-weight: 300
+    color: $col_accent
+    +rmin(992)
+      line-height: 8rem
+    &:hover
+      color: white
+  &.menu_state_open
+    background-color: $col_bg_d 
+  &.menu_state_open .menu__icon span:nth-child(1) 
+    top: 11px
+    width: 0%
+    left: 50%
+  &.menu_state_open .menu__icon span:nth-child(2) 
+    transform: rotate(45deg)
+  &.menu_state_open  .menu__icon span:nth-child(3) 
+    transform: rotate(-45deg)
+  &.menu_state_open  .menu__icon span:nth-child(4) 
+    bottom: 11px
+    width: 0%
+    left: 50%
+  &.menu_state_open &__item
+    display: block
+  &.menu_state_open &__list
+    display: inline-block 
+  &.menu_state_open .logo__link
+    display: block
+    text-align: center
+    margin-left: 0
+    // margin-top: 20px
+    margin-bottom: 20px
+    // &.menu_state_open .logo__img
+    //   margin: 0
+
+.menu
+  &__icon
+    display: block
+    float: right
+    margin: 1.5rem 0
+    margin-right: 2.4rem 
+    width: 30px
+    height: 24px
+    position: relative
+    cursor: pointer
+    // &.navclose
+    //   background-color: red 
+    & span
+      display: block
+      position: absolute
+      width: 100%
+      height: 2px
+      left: 0
+      background-color: $col_accent
+      border-radius: 2px
+      -webkit-transform: rotate(0deg)
+      -moz-transform: rotate(0deg)
+      -ms-transform: rotate(0deg)
+      -o-transform: rotate(0deg)
+      transform: rotate(0deg)
+      -webkit-transition: 0.25s ease-in-out
+      -moz-transition: 0.25s ease-in-out
+      -ms-transition: 0.25s ease-in-out
+      -o-transition: 0.25s ease-in-out
+      transition: 0.25s ease-in-out
+      &:nth-child(1)
+        top: 0
+      &:nth-child(2), &:nth-child(3)
+        top: 11px
+      &:nth-child(4)
+        bottom: 0 
+    +rmin(992)
+      display: none

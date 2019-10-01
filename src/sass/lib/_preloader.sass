@@ -1,0 +1,118 @@
+// количество колец, должно совпадать с количеством в верстке
+$ncirc: 5
+// блок переменных цветов
+$preloader__bg_col1: #19262f
+$preloader__bg_col2: #06080a
+$loader__circle_col: #5b5b78
+
+
+.preloader
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 999
+  background: radial-gradient(at top, $preloader__bg_col1, $preloader__bg_col2)
+  visibility: visible
+
+  &.done__preload 
+    opacity: 0
+    visibility: hidden
+    transition: 0.5s
+  
+.loader
+  position: absolute
+  left: 50%
+  top: 50%
+  -webkit-border-radius: 100% 
+  border-radius: 100% 
+  -webkit-transform: translate(-50%, -50%)
+  -moz-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%)
+  -o-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+  width: 75px
+  height: 75px
+  visibility: visible
+  opacity: 1
+
+  &.done__load 
+    opacity: 0
+    visibility: hidden
+    transition: 0.5s
+
+#load__perc
+  width: 100%
+  height: 100%
+  position: absolute
+  line-height: 75px
+  font-size: 16px
+  font-weight: 900
+  text-align: center
+  color: $loader__circle_col
+
+.circle
+  width: 100%
+  height: 100%
+  position: absolute
+  
+.inner
+  -webkit-box-sizing: content-box
+  -moz-box-sizing: content-box
+  box-sizing: content-box
+  width: 100%
+  height: 100%
+  border-radius: 100%
+  border: 4px solid transparentize($loader__circle_col, 0.3)
+  -o-background-clip: padding-box 
+  border-right: none
+  border-top: none
+  background-clip: padding-box 
+  box-shadow: inset 0px 0px 10px transparentize($loader__circle_col, 0.85)
+
+.company__logo
+  position: absolute
+  left: 50%
+  top: 50%
+  -webkit-transform: translate(-50%, -50%)
+  -moz-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%)
+  -o-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+  visibility: hidden
+  opacity: 0
+  transition: 0.5s
+
+  &.done__logo 
+    opacity: 1
+    visibility: visible
+    transition: 0.5s
+
+
+@keyframes spin
+  from
+    -webkit-transform: rotate(0deg)
+    -moz-transform: rotate(0deg)
+    -ms-transform: rotate(0deg)
+    -o-transform: rotate(0deg)
+    transform: rotate(0deg)
+  to
+    -webkit-transform: rotate(360deg)
+    -moz-transform: rotate(360deg)
+    -ms-transform: rotate(360deg)
+    -o-transform: rotate(360deg)
+    transform: rotate(360deg)
+
+@for $i from 0 through $ncirc  
+  .circle:nth-of-type(#{$i})
+    -webkit-transform: rotate($i * 70deg)
+    -moz-transform: rotate($i * 70deg)
+    -ms-transform: rotate($i * 70deg)
+    -o-transform: rotate($i * 70deg)
+    transform: rotate($i * 70deg)
+    .inner
+      -webkit-animation: spin 2s infinite linear
+      -moz-animation: spin 2s infinite linear
+      -o-animation: spin 2s infinite linear
+      animation: spin 2s infinite linear

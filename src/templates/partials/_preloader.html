@@ -1,0 +1,14 @@
+  <!-- begin preloader -->
+  <!-- !delete! блок прелоадера требует подключения preloader.js и _preloader.sass -->
+  <div id="page__preloader" class="preloader">
+    <div id="page__loader" class="loader">
+      <span id="load__perc">0%</span>
+      {% for i in range(0, 5) %}
+      <div class="circle">
+        <div class="inner"></div>
+      </div>
+      {% endfor %}
+    </div>
+    <img src="../../img/vardec-logo.png" alt="" class="company__logo" id="logo" />
+  </div>
+   <!-- end preloader -->

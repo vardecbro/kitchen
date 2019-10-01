@@ -1,0 +1,29 @@
+<nav class="navbar clearfix">
+  <div class="wrapper__navbar clearfix">
+    <div class="menu__icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <a class="logo__link" href="#"><img class="logo__img" src="../../img/vardec-logo.png" alt="" /></a>
+
+    <!-- <a class="navbar__link" href="tel:89811816035">+7(981)181-60-35</a> -->
+    <!-- <a class="call__link" href="tel:89811816035"><img class="call__img" src="../../img/call.png" alt="" /></a> -->
+
+    <ul class="navbar__list">
+      {% import "data/navdata.html" as navbars %}
+        {% for item in navbars.item %}
+          <li class="navbar__item">
+            <a class="navbar__link" href="{{item.link}}">{{item.name}}</a>
+          </li>
+        {%endfor%}
+        <li class="navbar__item">
+          <a class="navbar__link" href="tel:88129990103">7(812) 999-01-03</a>
+        </li>
+    </ul>
+
+  </div>
+
+</nav>
